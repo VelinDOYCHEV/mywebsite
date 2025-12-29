@@ -1,0 +1,601 @@
+/* първа страница*/
+/*навигационно табло*/
+/* NAVBAR */
+body{
+    margin:0;
+    padding:0;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* LOGO */
+.logo img {
+    width: 100px;
+    
+}
+
+/* LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+}
+
+/* BURGER */
+.burger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 700px) {
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #333;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+/*навигационно табло край*/
+/* текст+бутон и снимка до него*/
+.start {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+.photo_right {
+    flex: 1;                /* заема ~половината секция */
+}
+
+.photo_right img {
+    width: 100%;            /* запълва контейнера */
+    max-width: 100%;
+    height: auto;           /* няма деформация */
+    display: block;
+
+    border-radius: 12px;    /* по желание */
+}
+.text_left {
+    flex: 1;
+}
+
+.text_left h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.text_left p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: "Inter", sans-serif;
+}
+.b1 {
+    padding: 14px 34px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    background: linear-gradient(135deg, #f4b63f, #e59b24);
+    color: #111;
+
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+.b1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(135deg, #f6c45b, #f0a833);
+}
+
+@media (max-width: 768px) {
+
+    .start {
+        flex-direction: column;   /* вертикално */
+        text-align: center;
+    }
+
+    .photo_right {
+        width: 100%;
+    }
+
+    .photo_right img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* текст+бутон и снимка до него край*/
+/* основно продукти*/
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 */
+    gap: 30px;
+
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.card {
+    background: #f5f5f5;
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+@media (max-width: 700px) {
+    .products {
+        grid-template-columns: 1fr; /* 1x4 */
+    }
+}
+
+/* продукти край*/
+/* абонамент за емейли*/
+.emails {
+    max-width: auto;
+    margin-top: 80px;
+    padding: 40px 30px;
+
+    text-align: center;
+    background: #e02020;
+    
+}
+.emails h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;     /* по-дебел текст */
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+.emails p {
+   max-width: 520px;      
+    margin: 0 auto 40px;   
+    font-size: 1,5rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #f3f3f3;
+    font-family: "Inter", sans-serif;
+}
+.emails .input {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: 2px solid #ccc;
+    outline: none;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+@media (max-width: 700px) {
+    .emails .input {
+        max-width: 80%;
+    }
+    
+}
+.emails .input:focus {
+    border-color: #f4b63f;
+    box-shadow: 0 0 0 4px rgba(244, 182, 63, 0.25);
+}
+.emails .input::placeholder {
+    color: #999;
+}
+.footer {
+    width: 100%;
+    background-color: #2f2f2f;   /* тъмен фон */
+    color: #f2f2f2;
+
+    padding: 40px 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    box-sizing: border-box;
+}
+.footer span {
+    margin: 10px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-family: "Inter", sans-serif;
+}
+
+.footer a {
+    color: #f4b63f;          /* акцентен цвят */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 700px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* краен раздел за емейли*/
+/*страница услуги*/
+/* услуги header*/
+.services-header {
+    border: #111 2px solid;
+    display:flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+
+.header_content {
+    width:80%;
+}
+
+.header_content h1{
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 5px;
+    font-family:"Inter", sans-serif;
+}
+.header_content h2{
+    font-size: 4rem;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family:"Inter", sans-serif;
+}
+.header_content p{
+    width: 60%;
+    font-size: 1rem;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family:"Inter", sans-serif;
+}
+
+/*край на header*/
+
+/*услуги карти и таблица*/
+
+.grid-container{
+    display: grid;
+    grid-template-columns:300px 300px 300px;
+    justify-content: center;
+}
+.item {
+    position: relative; /* Важно: за да държи ::before вътре */
+    overflow: hidden;    /* Важно: за да не излиза цветът извън бордерите */
+    max-width: 250px;
+    min-width: 200px;
+    width: 250px;
+    height: auto;
+    border: #111 2px solid;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    text-align: start;
+    transition: transform 0.4s ease; /* Добавено за плавен hover */
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #4caf50;
+    z-index: 0;
+    transition: height 0.4s ease;
+}
+
+.item * {
+    position: relative;
+    z-index: 1;
+}
+
+/* hover ефекти */
+.item:hover {
+    transform: translateY(-8px);
+}
+
+.item:hover::before {
+    height: 100%;
+}
+.item a{
+    text-decoration: none;
+   
+    color: #111;
+    font-family: "Inter", sans-serif;
+}
+@media (max-width:700px){
+ .grid-container{
+    display: grid;
+    grid-template-columns:300px;
+    justify-content: center;}
+
+}
+/*таблица с цени*/
+/* Основни стилове за контейнерите (картите) */
+.table_price, .table_price1 {
+    display: none;
+    background-color: #ffffff;
+    border-radius: 10px;    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Сянка за дълбочина */
+    padding: 20px;
+    margin: 20px auto;         /* Центриране и разстояние между тях */
+    max-width: 600px;          /* Ограничаване на ширината */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Стилизиране на заглавията */
+.table_price h3, .table_price1 h3 {
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4caf50; /* Зелена линия под заглавието */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Центриране на заглавието спрямо контейнера */
+.table_price, .table_price1 {
+    text-align: center; 
+}
+
+/* Стилизиране на самата таблица */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Премахва двойните рамки */
+    margin: 0;
+    overflow: hidden; /* Важно за заоблените ъгли */
+    border-radius: 8px;
+}
+
+/* Заглавен ред на таблицата (Header) */
+th {
+    background-color: #4caf50; 
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Клетките с данни */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd; /* Тънка сива линия между редовете */
+    color: #555;
+    text-align: left;
+}
+
+/* Подравняване на цените вдясно */
+td:last-child, th:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Ефект "Зебра" - всеки втори ред е леко сив за по-лесно четене */
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Hover ефект - редът потъмнява при минаване с мишката */
+tr:hover {
+    background-color: #999999;
+    transition: background-color 0.2s ease;
+}
+
+/* Премахване на последната черта на таблицата */
+tr:last-child td {
+    border-bottom: none;
+}
+/*край таблици с стени*/
+/*услуги карти и таблица край*/
+
+
+
+/*страница за нас */
+/* Таргетираме само main с този клас */
+.info-section {
+    max-width: 1400px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Заглавията само вътре в тази секция */
+.info-section h2 {
+    color: #333;
+    border-left: 5px solid #f4b63f; /* Зелена вертикална линия */
+    padding-left: 15px;
+    margin-top: 25px;
+}
+
+/* Стилизиране на списъка */
+.services-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.services-list li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.services-list li::before {
+    content: "✓";
+    color: #f4b63f;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/*страница за нас  край*/
+
+
+
+/* страница контати*/
+
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.form-group {
+    display: flex;
+    align-items: center; /* Центрира текста спрямо полето */
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+/* Стил за етикетите (Label) */
+.form-group label {
+    flex: 0 0 120px; /* Фиксирана ширина на текста вляво */
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Стил за инпутите */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    flex: 1; /* Полетата заемат останалото място */
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 2px;
+}
+
+/* Специално за полето "Съобщение" */
+.message-group {
+    flex-direction: column; /* Текстът да е над голямото поле */
+    align-items: flex-start;
+}
+
+.message-group textarea {
+    width: 100%;
+    height: 150px;
+    resize: vertical; /* Позволява само вертикално разтягане */
+}
+
+/* Стил за бутона */
+.submit-group {
+    justify-content: center; /* Центрира бутона */
+    margin-top: 20px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #f0ad4e; /* Оранжевият цвят от снимката */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-transform: uppercase;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #ec971f;
+}
+
+/* Адаптивност за малки екрани */
+@media (max-width: 500px) {
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-group label {
+        flex: none;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
+/*страница контати край*/

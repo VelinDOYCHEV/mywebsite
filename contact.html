@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Velin</title>
+      <link rel="icon" type="image/jpg" href="logo.jpg">
+       <link rel="stylesheet" href="style.css">
+</head>
+<body>      
+
+               <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+            <img src="snimki/Gemini_Generated_Image_eufqc7eufqc7eufq.png" alt="Лого на Велин Сервиз" />
+      </a>
+    </div>
+
+    <div class="burger" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="about_us.html">За нас</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+        <li><a href="products.html">Продукти</a></li>
+        <li><a href="galery.html">Галерия</a></li>
+
+    </ul>
+</nav>
+
+      
+<hr>
+<main class="contact-page">
+    <form class="contact-form">
+    <div class="form-group">
+        <label for="fname">ИМЕ *</label>
+        <input type="text" id="fname" name="fname" required>
+    </div>
+    <div class="form-group">
+        <label for="lname">ФАМИЛИЯ *</label>
+        <input type="text" id="lname" name="lname" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">ТЕЛЕФОН *</label>
+        <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+        <label for="email">ИМЕЙЛ *</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group message-group">
+        <label for="text">СЪОБЩЕНИЕ *</label>
+        <textarea id="text" name="text" required></textarea>
+    </div>
+    <div class="form-group submit-group">
+        <input type="submit" value="ИЗПРАТИ СЪОБЩЕНИЕ">
+    </div>
+</form>
+<section class="contact-details">
+
+      <h2>Връзка с нас </h2>
+            <p>Винаги можете да се свържете с нас по имейл, но едно телефонно обаждане в рамките на работното ни време също е добро решение.</p>
+
+      <h2>График</h2>
+            <p>Пон.-Петък:8:00-18:00<br>Събота:8:00-14:00<br>Неделя:Затворено</p>
+      <h2>локация</h2>
+            <p>ул. „Иван Михайлов“ 66, Благоевград, България</p>
+
+      <h2>телефон</h2>
+            <p>
+                  123-456-7890<br>
+                  098-765-4321
+            </p>
+      <h2>емайл</h2>
+            <p>
+                  bikeservice@gmail.com
+            </p>
+
+</section>
+<br>
+<h2>сожиални мрежи</h2>
+
+<a href="https://www.facebook.com/velin.douchev/">
+      <img src="snimki/facebook_logo.png"
+            alt="лого на facebook"
+            width="25px">
+</a>
+<br>
+<a href="https://www.instagram.com/velindoychev_/">
+      <img src="snimki/instagram_logo.avif"
+            alt="лого на instagram"
+            width="25px">
+</a>
+<br>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d738.1420565125966!2d23.124464219614932!3d42.26639234820012!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aae90a15ea881b%3A0xbac1d95b3277499a!2z0KbQtdC90YLRitGALCDRg9C7LiDigJ7QptCw0YAg0J7RgdCy0L7QsdC-0LTQuNGC0LXQu-KAnCA0NywgMjYwMCDQlNGD0L_QvdC40YbQsA!5e0!3m2!1sbg!2sbg!4v1767013285248!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+</script>
+</main>
+<footer class="footer">     
+    <span><a href="https://maps.app.goo.gl/RS6uPNApUpvN5xC37"> ул. „Иван Михайлов“ 66, Благоевград</a></span>
+    <span>Пон.-Петък 10:30–19:00; Събота 10:30–15:00</span>
+    <span>+123-123-1234<br>+456-456-5467</span>
+    <span><a href="mailto:vdoychev777@gmail.com">bikeservice@gmail.com</a></span>
+</footer>
+
+</body>
+</html>
