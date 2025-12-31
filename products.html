@@ -29,76 +29,104 @@
 
     </ul>
 </nav>
-
 <main>
+    <div class="products-grid">
+        
+        <div class="product-card">
+            <img src="snimki/fox-40-factory-fork-gripx2-shiny-black-1-1696186.jpg" class="main-img">
+            <h3>Вилки</h3>
+            <button class="btn-more" onclick="openGallery('data-forks')">Разгледай модели</button>
+        </div>
 
-      <div>
-            <img src="snimki/fox-40-factory-fork-gripx2-shiny-black-1-1696186.jpg" width="200px">
-            <button onclick="document.getElementById('moreForks').style.display='block'">виж повече</button>
-      </div>
+        <div class="product-card">
+            <img src="snimki/shox.jpg" class="main-img">
+            <h3>Шокове</h3>
+            <button class="btn-more" onclick="openGallery('data-shocks')">Разгледай модели</button>
+        </div>
 
-      <div>
-            <img src="snimki/shox.jpg" width="200px">
-            <button onclick="document.getElementById(`moreShock`).style.display=`block`">виж повече</button>
-      </div>
+        <div class="product-card">
+            <img src="snimki/dropper.jpg" class="main-img">
+            <h3>Колчета</h3>
+            <button class="btn-more" onclick="openGallery('data-droppers')">Разгледай модели</button>
+        </div>
 
-      <div>
-            <img src="snimki/dropper.jpg" width="200px">
-            <button onclick="document.getElementById(`moreDroper`).style.display=`block`">виж повече</button>
-      </div>
+        <div class="product-card">
+            <img src="snimki/motul-fork-oil-expert-medium-10w-1l-1000x1000.jpg" class="main-img">
+            <h3>Масла</h3>
+            <button class="btn-more" onclick="openGallery('data-oils')">Разгледай модели</button>
+        </div>
 
-      <div>
-            <img src="snimki/motul-fork-oil-expert-medium-10w-1l-1000x1000.jpg" width="200px">
-            <button onclick="document.getElementById(`moreOil`).style.display=`block`">виж повече</button>
-      </div>
+    </div>
 
+    <section id="big-gallery-section" class="gallery-section">
+        <div class="gallery-header">
+            <h3>Детайлен преглед</h3>
+            <button class="close-btn" onclick="closeGallery()">✖ Затвори</button>
+        </div>
+        <div id="gallery-content" class="gallery-content">
+            </div>
+    </section>
 
-<div id="moreForks" style="display:none; margin-top:20px;">
-    <h3>Още продукти</h3>
-    <img src="snimki/forck.jpg" width="120">
-    <img src="snimki/fox36.jpg" width="120">
-    <img src="snimki/fox34.png" width="120">
-</div>
+    <div id="data-forks" style="display: none;">
+        <img src="snimki/forck.jpg" alt="Вилка 1">
+        <img src="snimki/fox36.jpg" alt="Вилка 2">
+        <img src="snimki/fox34.png" alt="Вилка 3">
+        <img src="snimki/fox-40-factory-fork-gripx2-shiny-black-1-1696186.jpg" alt="Вилка 4">
+    </div>
 
+    <div id="data-shocks" style="display: none;">
+        <img src="snimki/shox.jpg">
+        <img src="snimki/fox_dhx2.jpg">
+        <img src="snimki/fox_dpx.webp">
+    </div>
 
-<div id="moreShock" style="display:none ; margin-top: 20px;">
-      <h3>Още продукти</h3>
-      <img src="snimki/shox.jpg" width="120">
-      <img src="snimki/fox_dhx2.jpg" width="120">
-      <img src="snimki/fox_dpx.webp" width="120">
+    <div id="data-droppers" style="display: none;">
+        <img src="snimki/dropper.jpg">
+        <img src="snimki/droper1.jpg">
+        <img src="snimki/droper2.jpg">
+    </div>
 
-</div>
-
-<div id="moreDroper" style="display:none ; margin-top: 20px;">
-      <h3>още продукти</h3>
-      <img src="snimki/dropper.jpg " width="120">
-      <img src="snimki/droper1.jpg " width="120">
-      <img src="snimki/droper2.jpg" width="120">
-</div>
-
-
-<div id="moreOil" style="display: none; margin-top: 20px;">
-      <img src="snimki/fox_20_gold.jpg" width="120">
-      <img src="snimki/rockshox_7,5w.jpg" width="120">
-      <img src="snimki/motul-fork-oil-expert-medium-10w-1l-1000x1000.jpg" width="120">
-</div>
-
-
-
+    <div id="data-oils" style="display: none;">
+        <img src="snimki/fox_20_gold.jpg">
+        <img src="snimki/rockshox_7,5w.jpg">
+        <img src="snimki/motul-fork-oil-expert-medium-10w-1l-1000x1000.jpg">
+    </div>
 
 </main>
-
 <div class="emails">
-      <h2>АБОНИРАЙТЕ СЕ ЗА НАШИТЕ ЕМАИЛИ </h2><br>
+      <h2>АБОНИРАЙТЕ СЕ И ПОЛУЧАВАЙТЕ НОВИНИ И ОФЕРТИ </h2><br>
       <p >Бъдете първите, които ще научат за оферти и артикули на разпродажба. Получавайте най-добрите съвети за настройка на окачването директно във входящата си поща. Без спам, само страхотни съвети от нашите опитни техници.</p>
 <form>
       
 <input type="email" name="text" class="input" placeholder="Email address" />
 
+</form>
+</div>
+
+
+</main>
 <script>
-function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-}
+    function openGallery(sourceId) {
+        // 1. Намираме източника на снимките (скрития див)
+        var source = document.getElementById(sourceId);
+        
+        // 2. Намираме голямата галерия и контейнера за съдържание
+        var gallerySection = document.getElementById('big-gallery-section');
+        var galleryContent = document.getElementById('gallery-content');
+
+        // 3. Копираме съдържанието
+        galleryContent.innerHTML = source.innerHTML;
+
+        // 4. Показваме секцията
+        gallerySection.style.display = 'block';
+
+        // 5. Плавно скролване до галерията
+        gallerySection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeGallery() {
+        document.getElementById('big-gallery-section').style.display = 'none';
+    }
 </script>
 
 <footer class="footer">     
@@ -107,6 +135,12 @@ function toggleMenu() {
     <span>+123-123-1234<br>+456-456-5467</span>
     <span><a href="mailto:vdoychev777@gmail.com">bikeservice@gmail.com</a></span>
 </footer>
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+</script>
+
 
 </body>
 </html>

@@ -511,91 +511,385 @@ tr:last-child td {
 
 
 /* страница контати*/
+.contact-page {
 
-.contact-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 30px;
-    background: #fff;
-    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
 }
 
+/* Основен контейнер, който държи двете "карти" */
+.cube {
+    display: flex;
+    gap: 30px; /* Разстояние между лявата и дясната част */
+    max-width: 1100px;
+    width: 100%;
+    align-items: flex-start; /* Подравняване отгоре */
+}
+
+/* --- Стилове за двете "карти" (общи) --- */
+.contact-form, .contact-details {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Мека сянка */
+    flex: 1; /* Двете колони заемат равно място */
+}
+
+/* --- ЛЯВА ЧАСТ: Формата --- */
 .form-group {
     display: flex;
-    align-items: center; /* Центрира текста спрямо полето */
+    align-items: center;
     margin-bottom: 20px;
     gap: 15px;
 }
 
-/* Стил за етикетите (Label) */
 .form-group label {
-    flex: 0 0 120px; /* Фиксирана ширина на текста вляво */
+    flex: 0 0 110px; /* Фиксирана ширина за етикетите */
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
+    color: #333;
 }
 
-/* Стил за инпутите */
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
+/* Забележка: За да направите звездичките червени, най-добре е в HTML 
+   да са в отделен спан, напр: <label>ИМЕ <span style="color:red">*</span></label>. 
+   С текущия HTML те ще са с цвета на текста. */
+
+.form-group input,
 .form-group textarea {
-    flex: 1; /* Полетата заемат останалото място */
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    border-radius: 2px;
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #eee;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    font-family: inherit;
 }
 
-/* Специално за полето "Съобщение" */
 .message-group {
-    flex-direction: column; /* Текстът да е над голямото поле */
-    align-items: flex-start;
+    align-items: flex-start; /* Етикетът "Съобщение" отива горе */
 }
 
 .message-group textarea {
-    width: 100%;
-    height: 150px;
-    resize: vertical; /* Позволява само вертикално разтягане */
+    height: 120px;
+    resize: vertical;
 }
 
-/* Стил за бутона */
 .submit-group {
-    justify-content: center; /* Центрира бутона */
-    margin-top: 20px;
+    margin-top: 30px;
+    padding-left: 125px; /* Подравняване с полетата */
 }
 
 .contact-form input[type="submit"] {
-    background-color: #f0ad4e; /* Оранжевият цвят от снимката */
+    background-color: #e4a33a; /* Оранжевият цвят от снимката */
     color: white;
     border: none;
-    padding: 15px 40px;
-    font-size: 16px;
+    padding: 15px 30px;
+    font-size: 14px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
     text-transform: uppercase;
+    transition: background 0.3s;
+    width: 100%;
 }
 
 .contact-form input[type="submit"]:hover {
-    background-color: #ec971f;
+    background-color: #d3922b;
 }
 
-/* Адаптивност за малки екрани */
-@media (max-width: 500px) {
+/* --- ДЯСНА ЧАСТ: Детайли --- */
+
+/* Заглавната секция */
+.box1 h2 {
+    font-size: 2.5rem;
+    margin: 10px 0 20px 0;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1;
+}
+
+/* Добавяне на малкото оранжево заглавие "Потърсете Ни" чрез CSS */
+.box1 h2::before {
+    content: "Потърсете Ни";
+    display: block;
+    font-size: 1rem;
+    color: #e4a33a;
+    font-weight: bold;
+    text-transform: none;
+    margin-bottom: 15px;
+}
+
+.box1 p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Мрежата (Grid) за 4-те кутии */
+.boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две равни колони */
+    gap: 30px; /* Разстояние между клетките */
+}
+
+/* Стилове за всяка малка кутия (.boxx) */
+.boxx h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}
+
+/* (Опционално) Място за иконки преди заглавията, ако решите да добавите */
+
+
+.boxx p {
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* --- СПЕЦИАЛНАТА ОРАНЖЕВА КУТИЯ "ЛОКАЦИЯ" --- */
+/* В HTML-а "локация" е втората кутия .boxx. Използваме nth-child(2), за да я прихванем */
+.boxx:nth-child(2) {
+    background-color: #e4a33a; /* Оранжев фон */
+    padding: 30px; /* Повече вътрешно разстояние */
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(228, 163, 58, 0.3); /* Оранжева сянка */
+}
+
+/* Промяна на цвета на текста само вътре в оранжевата кутия */
+.boxx:nth-child(2) h2,
+.boxx:nth-child(2) p {
+    color: white !important;
+}
+
+/* --- Адаптивност за мобилни телефони --- */
+@media (max-width: 900px) {
+    .cube {
+        flex-direction: column; /* Карти една под друга */
+    }
+    
+    .contact-form, .contact-details {
+        width: 100%; /* Заемат цялата ширина */
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    /* На телефон етикетите над полетата */
     .form-group {
         flex-direction: column;
         align-items: flex-start;
+        gap: 5px;
     }
+
     .form-group label {
         flex: none;
-        margin-bottom: 5px;
+    }
+
+    .submit-group {
+        padding-left: 0;
+    }
+
+    /* На телефон решетката става в една колона */
+    .boxes {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
-
-
-
-
-
+.social-media {
+    
+    text-align: center;
+    margin-top: 30px;
+}
 /*страница контати край*/
+/*продукти*/
+/* --- Стил за Продуктите (както преди) --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.product-card {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.main-img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* --- НОВО: Стил за Голямата Галерия отдолу --- */
+.gallery-section {
+    display: none; /* Скрито по подразбиране */
+    background-color: #222; /* Тъмен фон */
+    color: white;
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    border-bottom: 1px solid #444;
+    padding-bottom: 15px;
+}
+
+.close-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.close-btn:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+}
+
+/* Контейнер за големите снимки */
+.gallery-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Самите големи снимки */
+.gallery-content img {
+    width: 300px; /* ГИГАНТСКИ размер */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #fff;
+    transition: transform 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.gallery-content img:hover {
+    transform: scale(1.05); /* Увеличаване при посочване */
+}
+
+/* Адаптивност */
+@media (max-width: 900px) {
+    .products-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .gallery-content img { width: 100%; } /* На телефон заемат цялата ширина */
+}
+/*край на продукти*/
+/*тренировки*/
+.services-page {
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Стил за картата на услугата */
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.service-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.service-info {
+    flex: 1;
+}
+
+.service-info h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #e4a33a; /* Оранжев акцент */
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Стил за таблиците с цени */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table th {
+    text-align: left;
+    background: #640c0c;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.price-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+.price-table tr:last-child td {
+    border-bottom: none;
+}
+
+.price-table td:last-child {
+    font-weight: bold;
+    color: #e4a33a; /* Цените в оранжево */
+    text-align: right;
+}
+
+/* Адаптивност за телефони */
+@media (max-width: 650px) {
+    .service-card {
+        flex-direction: column; /* Снимката отива над таблицата */
+        text-align: center;
+    }
+    .service-image img {
+        width: 100%;
+    }
+    .price-table th, .price-table td {
+        text-align: center;
+    }
+}
+/*тренировки край*/
