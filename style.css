@@ -1,7 +1,21 @@
 /* първа страница*/
 /*навигационно табло*/
 /* NAVBAR */
+/* Най-важната част! */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden; /* Скрива всичко, което се опитва да излезе настрани */
+    position: relative; /* Помага за стабилността */
+}
+
+/* Това гарантира, че рамките (border) не увеличават размера на елементите */
+* {
+    box-sizing: border-box;
+}
 body{
+
     margin:0;
     padding:0;
 }
@@ -16,7 +30,13 @@ body{
 
 /* LOGO */
 .logo img {
-    width: 100px;
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+      /* Важно: реже снимката правилно, за да не се сплесква */
+    border: 2px solid #000000; /* Опционално: добавя бяла рамка около кръга */
+    display: block;
+
     
 }
 
@@ -25,6 +45,7 @@ body{
     list-style: none;
     display: flex;
     gap: 20px;
+    
 }
 
 .nav-links a {
@@ -47,21 +68,31 @@ body{
 
     .burger {
         display: block;
+        /* Увери се, че бургерът не е твърде надясно */
+        cursor: pointer;
     }
 
     .nav-links {
         position: absolute;
-        top: 60px;
-        left: 0;
+        top: 60px; /* Височината на навигацията */
+        left: 0; 
+        right: 0; /* Вместо width: 100%, ползвай left:0 и right:0 */
         width: 100%;
         background: #333;
         flex-direction: column;
         align-items: center;
         display: none;
+        
+        /* ВАЖНО: Нулирай падинга, който ul има по подразбиране */
+        margin: 0;
+        padding: 0;
+        z-index: 999; /* За да е най-отгоре */
     }
 
     .nav-links li {
         padding: 15px 0;
+        width: 100%; /* Бутонът да е широк колкото екрана */
+        text-align: center; /* Текстът в средата */
     }
 
     .nav-links.active {
